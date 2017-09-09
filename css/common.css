@@ -1,0 +1,82 @@
+body{
+	background: url('../images/bg.jpg') no-repeat center 0;
+	background-attachment:fixed;
+}
+
+/**
+ * Menu
+ */
+#default-menu{
+	background-color:transparent;
+	border-color:transparent;
+}
+
+#status-menu{
+	margin-top:50px;
+}
+#status-menu .sub-menu-block{
+	min-height:154px;
+	-webkit-border-radius:10px;-moz-border-radius:10px;border-radius: 10px;
+}
+#status-menu .sub-menu-block .sub-menu-img{
+	padding-top:20px;
+}
+#status-menu .sub-menu-active{
+	background-color:#fff;
+}
+
+#status-menu .sub-menu-inactive{
+	background-color:#8ee5f0;
+}
+
+#status-menu .sub-menu-title{
+	font-size:16px;
+	color:#222;
+	font-weight:700;
+	margin-top:18px;
+}
+#devices{
+	margin-top:15px;	
+}
+#devices .devices-block{
+	background-color:#fff;
+	-webkit-border-radius:10px;-moz-border-radius:10px;border-radius: 10px;
+	padding:50px;
+	margin-top:15px;
+	min-height:200px;
+	font-family: 微软雅黑;
+
+
+}
+
+#channel-devices .chan-devices-block{
+	background-color:#fff;
+	-webkit-border-radius:10px;-moz-border-radius:10px;border-radius: 10px;
+	padding:50px;
+	margin-top:15px;
+	min-height:200px;
+}
+
+
+.inline-block{
+	display:inline-block;
+}
+.margin-left-20{
+	margin-left:20px;
+}
+
+/**
+ * Footer
+ */
+#footer{
+	margin:50px 0px;
+	color:#fff;
+	font-size:10px;
+	font-weight:600;
+}
+#footer .footer-top-15{
+	margin-top:10px;
+}
+#footer .footer-space{
+	margin:0 30px;
+}

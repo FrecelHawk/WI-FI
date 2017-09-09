@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/titatoggle-dist.css" rel="stylesheet">
+    <link href="plugs/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+    <title>Title</title>
+    <script src="plugs/jquery/jquery.min.js"></script>
+    <script src="plugs/jquery-ui/jquery-ui.min.js"></script>
+
+</head>
+<script>
+    $(function() {
+        $( "#dialog" ).dialog({
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            }
+        });
+
+        $( "#opener" ).click(function() {
+            $( "#dialog" ).dialog( "open" );
+        });
+    });
+</script>
+<body>
+<div class="container">
+    <div class="checkbox checkbox-slider-lg checkbox-slider--b-flat  checkbox-slider-info">
+        <label>
+            <input type="checkbox"><span></span>
+        </label>
+    </div>
+</div>
+<div class="checkbox checkbox-slider--b-flat">
+    <label>
+        <input type="checkbox" checked=""><span>checked</span>
+    </label>
+</div>
+<div id="dialog" title="Basic dialog">
+    <p>这是一个动画显示的对话框，用于显示信息。对话框窗口可以移动，调整尺寸，默认可通过 'x' 图标关闭。</p>
+</div>
+
+<button id="opener">打开对话框</button>
+
+</body>
+
+</html>

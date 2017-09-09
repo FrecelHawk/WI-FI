@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors igita
+ * @date    2017-09-06 14:54:30
+ * @version 0.1
+ */
+@media (min-width: 1199px) {
+	
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width:768px) and (max-width: 992px)  {
+
+}
+
+@media (max-width: 767px) {
+	#status-menu .sub-menu-block{
+		margin-bottom:15px;
+		min-height:100px;
+	}
+	#status-menu .sub-menu-block .sub-menu-img{
+		padding-top:6px;
+	}
+	
+}
+
