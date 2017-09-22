@@ -1,0 +1,320 @@
+<header>
+    <nav class="navbar navbar-default" id="default-menu">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="img/logo.png"  class="img-responsive navbar-nav-icon"/></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li ><a  class="navbar-nav-txt navbar-nav-margin ">路由状态</a></li>
+                    <li ><a  class="navbar-nav-txt navbar-nav-txt-active">常用设置</a></li>
+                    <li ><a class="navbar-nav-txt ">高级设置</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right " >
+                    <li class="dropdown">
+                        <a id="my_profile" href="#" class="dropdown-toggle navbar-nav-right-profile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  >My name <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="border-radius: 10px;text-align: center;">
+                            <li style="font-weight: bold;"><a href="#">修改名称</a></li>
+                            <li><a href="#">系统升级</a></li>
+                            <li><a href="#">下载客户端</a></li>
+                            <li><a href="#">重启</a></li>
+                            <li><a href="#">注销</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+</header>
+
+
+<section id="status-menu" class="container" >
+    <div class="row" style="display: -webkit-box;">
+
+        <div class="col-md-2 col-lg-2 col-sm-2" style="-webkit-box-flex: 2">
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/wifi-.png" class="img-responsive center-block"/>
+                </div>
+                <div  class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">WIFI设置</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" style="-webkit-box-flex: 2">
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/hulianwang-.png" class="img-responsive center-block"/>
+                </div>
+                <div  class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">上网设置</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" style="-webkit-box-flex: 2">
+            <div class="center-block sub-menu-block sub-menu-active ">
+                <div class="sub-menu-img">
+                    <img src="img/aqzx-.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">安全中心</span><span class="menu-span">-</span></div>
+            </div>
+            <div class="triangle_con" style="left: 38%;"></div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" style="-webkit-box-flex: 2">
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/jyw.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">局域网设置</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" style="-webkit-box-flex: 2">
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/xtzt-.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">系统状态</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<section class="devices container">
+    <div class="devices-block">
+        <div class="row">
+            <div class="col-md-10">
+                <h4 class="deivce-block-title">无线访问控制</h4>
+            </div>
+            <div class="col-md-2">
+                <div style="margin-top: 15px">
+                    <div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
+                        <label>
+                            <input type="checkbox" checked=""><span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div style="margin-left: 15px; ">
+                <h4>控制模式</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label class="radio-inline ">
+                    <input type="radio" name="dns_config" value="1"> 黑名单模式（不允许列表中设备访问）
+                </label>
+            </div>
+
+            <div class="col-md-6">
+                <label class="radio-inline ">
+                    <input type="radio" name="dns_config" value="2"> 白名单模式 （只允计列表中设备访问）
+                </label>
+            </div>
+
+        </div>
+
+
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6" >
+                <h4>白名单设备列表</h4>
+            </div>
+            <div class="form-group col-md-6" >
+                <div class="col-md-offset-9" >
+                    <span class="my-btn my-btn-danger " style="width: 120px;" >保存并生效</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="chan-devices-block">
+                    <table class="table table-hover device_table" >
+                        <thead>
+                        <tr>
+                            <th>设备名称</th>
+                            <th>MAC地址</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>jiangTing</td>
+                            <td>192.168.31.19</td>
+                            <td>
+                                <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>jiangTing</td>
+                            <td>192.168.31.19</td>
+                            <td>
+                                <div class="form-group">
+                                    <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div style="text-align: center;">
+                    <span class="my-btn my-btn-primary" style="width: 150px;" >从在线列表添加</span>
+                    <span class="my-btn my-btn-default" style="width: 150px;" >手工添加</span>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+
+<section class="devices container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="block">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
+                        <h4 class="deivce-block-title">修改管理密码</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-md-offset-2" >
+                        <div class="form-group">
+                            <div class="col-md-7 form-item form-input  ">
+                                <span class="form-lable">原密码</span>
+                                <input type="password" class="form-control form-item-input "  maxlength="5" value="0.0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-md-offset-2" >
+                        <div class="form-group">
+                            <div class="col-md-7 form-item form-input ">
+                                <span class="form-lable">新密码</span>
+                                <input type="password" class="form-control form-item-input "  maxlength="5" value="0.0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-md-offset-2" >
+                        <div class="form-group">
+                            <div class="col-md-7 form-item form-input ">
+                                <span class="form-lable">确认密码</span>
+                                <input type="password" class="form-control form-item-input "  maxlength="5" value="0.0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-md-offset-3" >
+                        <div class="form-group">
+                            <span class="my-btn my-btn-primary " style="width: 220px;" >保存</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row" style="margin-bottom: 40px;">
+                    <div></div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="block" >
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
+                        <h4 class="deivce-block-title">管理后台访问控制</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="col-md-offset-1">
+                            <h4>开关</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div style="margin-top: 15px">
+                            <div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
+                                <label>
+                                    <input type="checkbox" checked=""><span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="chan-devices-block" style="margin-left: 20px; margin-right: 20px;">
+                            <table class="table table-hover device_table"  >
+                                <thead>
+                                <tr>
+                                    <th>MAC地址白名单</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>jiangTing</td>
+                                    <td>
+                                        <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>jiangTing</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

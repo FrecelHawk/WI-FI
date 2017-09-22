@@ -1,0 +1,229 @@
+<header>
+    <nav class="navbar navbar-default" id="default-menu">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="img/logo.png"  class="img-responsive navbar-nav-icon"/></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li ><a  class="navbar-nav-txt navbar-nav-margin ">路由状态</a></li>
+                    <li ><a  class="navbar-nav-txt">常用设置</a></li>
+                    <li ><a class="navbar-nav-txt navbar-nav-txt-active">高级设置</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right " >
+                    <li class="dropdown">
+                        <a id="my_profile" href="#" class="dropdown-toggle navbar-nav-right-profile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  >My name <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="border-radius: 10px;text-align: center;">
+                            <li style="font-weight: bold;"><a href="#">修改名称</a></li>
+                            <li><a href="#">系统升级</a></li>
+                            <li><a href="#">下载客户端</a></li>
+                            <li><a href="#">重启</a></li>
+                            <li><a href="#">注销</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+</header>
+
+<section id="status-menu" class="container" >
+    <div class="row" style="display: -webkit-box;">
+
+        <div class="col-md-2 col-lg-2 col-sm-2">
+            <div class="center-block sub-menu-block sub-menu-active">
+                <div class="sub-menu-img">
+                    <img src="img/znxs-.png" class="img-responsive center-block"/>
+                </div>
+                <div  class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">QOS智能限速</span><span class="menu-span">-</span></div>
+            </div>
+            <div class="triangle_con" style="left: 38%;"></div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" >
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/jtip-.png" class="img-responsive center-block"/>
+                </div>
+                <div  class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">DHCP静态IP分配</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" >
+            <div class="center-block sub-menu-block sub-menu-inactive ">
+                <div class="sub-menu-img">
+                    <img src="img/ddns-.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">DDNS</span><span class="menu-span">-</span></div>
+            </div>
+
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" >
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/dkzf-.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">端口转发</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" >
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/vpn-.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">VPN</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" >
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/qita.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">其他</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<section class="devices container">
+    <div class="devices-block">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="deivce-block-title">外网带宽状态</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div style="text-align: center;">
+                <b>外网宽带</b>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-4" style="margin-top: 20px;">
+                <div class="qos_left col-md-offset-1" style="float: left;">
+                    <img src="img/kuandai.png">
+                    <b style="position: relative;top: -10px;left: -10px;left: 15px;">Mbps</b>
+                    <span class="text_gray" style="position: relative;left: -30px;top:10px;">上传带宽</span>
+                </div>
+                <div class="qos_right " >
+                    <b style="position: relative;top: -10px;left: -10px;left: 25px;">Mbps</b>
+                    <span class="text_gray" style="position: relative;left: -20px;top: 10px;">上传带宽</span>
+                    <img src="img/kuandai.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-4" style="margin-top: 20px;">
+                <span class="my-btn my-btn-primary " style="width: 220px;" >开始测速</span>
+                <span class="my-btn my-btn-default " style="width: 220px;" >手工设置</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="devices container">
+    <div class="devices-block">
+        <div class="row">
+            <div class="col-md-10">
+                <h4 class="deivce-block-title">QOS智能分配</h4>
+            </div>
+            <div class="col-md-2">
+                <div style="margin-top: 15px">
+                    <div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
+                        <label>
+                            <input type="checkbox" checked=""><span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="text-align: center;">
+                <b>根据应用优先级分配网速</b>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-group col-md-offset-3" style="margin-top: 20px;">
+                <span class="my-btn my-btn-gray" style="width: 150px;">自动模式</span>
+                <span class="my-btn my-btn-default" style="width: 150px;">网页优先</span>
+                <span class="my-btn my-btn-gray" style="width: 150px;">游戏优先</span>
+                <span class="my-btn my-btn-gray" style="width: 150px;">视频优先</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="margin-top: 20px;">
+                <p class="text_gray col-md-offset-5">优先保证浏览器网页网速，大图秒打开</p>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 50px;">
+            <div class="col-md-4 ">
+                <div class="row">
+                    <span class="col-md-offset-5"><b>家庭WIFI限速</b></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3" style="margin-top: 20px;">
+                        <div class="col-md-offset-2" style="margin-top: 20px;" >
+                        </div>
+                        <span class="my-btn my-btn-primary" style="width: 170px;margin-top: 20px; ">编辑</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="row">
+                    <span class="col-md-offset-4"><b>访客WIFI限速</b></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2" style="margin-top: 20px;">
+                        <div class="col-md-offset-2">
+                            <span class="text_blue">无限制</span>
+                            <span class="horizontal_line_blue" style="height: 50px;margin-left: 10px;margin-right: 10px;"></span>
+                            <span class="text_blue">无限制</span>
+                        </div>
+                        <span class="my-btn my-btn-primary" style="width: 170px;margin-top: 20px; ">编辑</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <span class="col-md-offset-1"><b>路由器自身上传下载限速</b></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" style="margin-top: 20px;">
+                        <div class="col-md-offset-2">
+                            <span class="text_blue">无限制</span>
+                            <span class="horizontal_line_blue" style="height: 50px;margin-left: 10px;margin-right: 10px;"></span>
+                            <span class="text_blue">无限制</span>
+                        </div>
+                        <span class="my-btn my-btn-primary" style="width: 170px;margin-top: 20px; ">编辑</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

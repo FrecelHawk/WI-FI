@@ -1,0 +1,282 @@
+<header>
+    <nav class="navbar navbar-default" id="default-menu">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="img/logo.png"  class="img-responsive navbar-nav-icon"/></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li ><a  class="navbar-nav-txt navbar-nav-margin ">路由状态</a></li>
+                    <li ><a  class="navbar-nav-txt">常用设置</a></li>
+                    <li ><a class="navbar-nav-txt navbar-nav-txt-active">高级设置</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right " >
+                    <li class="dropdown">
+                        <a id="my_profile" href="#" class="dropdown-toggle navbar-nav-right-profile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  >My name <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="border-radius: 10px;text-align: center;">
+                            <li style="font-weight: bold;"><a href="#">修改名称</a></li>
+                            <li><a href="#">系统升级</a></li>
+                            <li><a href="#">下载客户端</a></li>
+                            <li><a href="#">重启</a></li>
+                            <li><a href="#">注销</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+</header>
+
+<section id="status-menu" class="container" >
+    <div class="row" style="display: -webkit-box;">
+
+        <div class="col-md-2 col-lg-2 col-sm-2">
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/znxs-.png" class="img-responsive center-block"/>
+                </div>
+                <div  class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">QOS智能限速</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" >
+            <div class="center-block sub-menu-block  sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/jtip-.png" class="img-responsive center-block"/>
+                </div>
+                <div  class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">DHCP静态IP分配</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" >
+            <div class="center-block sub-menu-block  sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/ddns-.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">DDNS</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" >
+            <div class="center-block sub-menu-block  sub-menu-active">
+                <div class="sub-menu-img">
+                    <img src="img/dkzf-.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">端口转发</span><span class="menu-span">-</span></div>
+            </div>
+            <div class="triangle_con" style="left: 38%;"></div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" >
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/vpn-.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">VPN</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-2" >
+            <div class="center-block sub-menu-block sub-menu-inactive">
+                <div class="sub-menu-img">
+                    <img src="img/qita.png" class="img-responsive center-block"/>
+                </div>
+                <div class="text-center sub-menu-title"><span class="menu-span">-</span><span class="sub-menu-title-txt">其他</span><span class="menu-span">-</span></div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<section class="devices container">
+    <div class="devices-block">
+        <div class="row">
+            <div style="margin-left: 15px; ">
+                <h4 class="deivce-block-title">控制模式</h4>
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6" >
+                <h4><strong>端口转发规则列表</strong></h4>
+            </div>
+            <div class="form-group col-md-6" >
+                <div class="col-md-offset-9" >
+                    <span class="my-btn my-btn-danger " style="width: 120px;" >保存并生效</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="chan-devices-block">
+                    <table class="table table-hover device_table" >
+                        <thead>
+                        <tr>
+                            <th>名字</th>
+                            <th>协议</th>
+                            <th>外部端口</th>
+                            <th>内部IP地址</th>
+                            <th>内部端口</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>jiangTing</td>
+                            <td>192.168.31.19</td>
+                            <td>jiangTing</td>
+                            <td>192.168.31.19</td>
+                            <td>jiangTing</td>
+                            <td>
+                                <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>jiangTing</td>
+                            <td>192.168.31.19</td>
+                            <td>jiangTing</td>
+                            <td>192.168.31.19</td>
+                            <td>jiangTing</td>
+                            <td>
+                                <div class="form-group">
+                                    <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="chan-devices-block">
+                    <table class="table table-hover device_table" >
+                        <h4><strong>范围转发规则列表</strong></h4>
+                        <thead>
+                        <tr>
+                            <th>名字</th>
+                            <th>协议</th>
+                            <th>起始端口</th>
+                            <th>结束端口</th>
+                            <th>内部端口</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>jiangTing</td>
+                            <td>192.168.31.19</td>
+                            <td>jiangTing</td>
+                            <td>192.168.31.19</td>
+                            <td>jiangTing</td>
+                            <td>
+                                <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>jiangTing</td>
+                            <td>192.168.31.19</td>
+                            <td>jiangTing</td>
+                            <td>192.168.31.19</td>
+                            <td>jiangTing</td>
+                            <td>
+                                <div class="form-group">
+                                    <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div style="text-align: center;">
+                    <span class="my-btn my-btn-primary" style="width: 250px;" >添加规则</span>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<section class="devices container">
+    <div class="block">
+        <div class="row">
+            <div class="form-group" style="margin-top: 50px;margin-left: 20px;">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+                    <div class="col-md-10">
+                        <label class="deivce-block-title">DMZ</label>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="checkbox checkbox-slider--b-flat checkbox-slider-info" style="top: -10px;">
+                            <label>
+                                <input type="checkbox" checked=""><span></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row">
+                <div class="form-group" style="margin-left: 150px;">
+                    <div class="col-md-offset-4">
+                        <span style="position: relative; top: 30px;">192.168.31.</span>
+                    </div>
+                    <div class="form-item form-input col-md-offset-5">
+                        <span class="form-lable">DMZ IP地址</span>
+                        <input type="text" class="form-control form-item-input "  maxlength="5" value="5">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group" style="margin-left: 150px;">
+                    <div class="col-md-offset-4" style="margin-top: 20px;">
+                        <span >DMZ状态：</span>
+                        <span class="text_gray" style="margin-left: 20px;">未生效</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-offset-5">
+                    <span class="my-btn my-btn-primary" style="width: 250px;" >应用</span>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</section>

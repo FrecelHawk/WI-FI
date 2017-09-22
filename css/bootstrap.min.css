@@ -4318,7 +4318,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 }
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-    background-color: #eee;
+  /*  background-color: #eee;*/
     border-color: #337ab7
 }
 
@@ -4928,7 +4928,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #e7e7e7;
+  /*  background-color: #e7e7e7;*/
     color: #555
 }
 

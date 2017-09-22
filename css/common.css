@@ -1,82 +1,511 @@
-body{
-	background: url('../images/bg.jpg') no-repeat center 0;
-	background-attachment:fixed;
+body {
+    background-attachment: fixed;
+    background-image: linear-gradient(#1dc6e7,#1ce3bc);
 }
 
 /**
  * Menu
  */
-#default-menu{
-	background-color:transparent;
-	border-color:transparent;
+#default-menu {
+    background-color: transparent;
+    border-color: transparent;
 }
 
-#status-menu{
-	margin-top:50px;
-}
-#status-menu .sub-menu-block{
-	min-height:154px;
-	-webkit-border-radius:10px;-moz-border-radius:10px;border-radius: 10px;
-}
-#status-menu .sub-menu-block .sub-menu-img{
-	padding-top:20px;
-}
-#status-menu .sub-menu-active{
-	background-color:#fff;
+#status-menu {
+    margin-top: 50px;
 }
 
-#status-menu .sub-menu-inactive{
-	background-color:#8ee5f0;
+#status-menu .sub-menu-block {
+    min-height: 154px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
-#status-menu .sub-menu-title{
-	font-size:16px;
-	color:#222;
-	font-weight:700;
-	margin-top:18px;
-}
-#devices{
-	margin-top:15px;	
-}
-#devices .devices-block{
-	background-color:#fff;
-	-webkit-border-radius:10px;-moz-border-radius:10px;border-radius: 10px;
-	padding:50px;
-	margin-top:15px;
-	min-height:200px;
-	font-family: 微软雅黑;
-
-
+#status-menu .sub-menu-block .sub-menu-img {
+    padding-top: 20px;
 }
 
-#channel-devices .chan-devices-block{
-	background-color:#fff;
-	-webkit-border-radius:10px;-moz-border-radius:10px;border-radius: 10px;
-	padding:50px;
-	margin-top:15px;
-	min-height:200px;
+#status-menu .sub-menu-active {
+    background-color: #fff;
 }
 
-
-.inline-block{
-	display:inline-block;
+#status-menu .sub-menu-inactive {
+    background-color: #8ee5f0;
 }
-.margin-left-20{
-	margin-left:20px;
+
+#status-menu .sub-menu-title {
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+    margin-top: 18px;
+}
+
+.devices {
+    margin-top: 15px;
+}
+
+.devices .devices-block {
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 50px;
+    margin-top: 15px;
+    min-height: 200px;
+    font-family: 微软雅黑;
+
+}
+
+.block {
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-family: 微软雅黑;
+    padding-bottom: 20px;
+}
+
+.channel-devices .chan-devices-block {
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 50px;
+    margin-top: 15px;
+    min-height: 200px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.margin-left-20 {
+    margin-left: 20px;
 }
 
 /**
  * Footer
  */
-#footer{
-	margin:50px 0px;
-	color:#fff;
-	font-size:10px;
-	font-weight:600;
+#footer {
+    margin: 50px 0px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
 }
-#footer .footer-top-15{
-	margin-top:10px;
+
+#footer .footer-top-15 {
+    margin-top: 10px;
 }
-#footer .footer-space{
-	margin:0 30px;
+
+#footer .footer-space {
+    margin: 0 30px;
+}
+
+/**
+ * 
+ */
+.sub-menu-title .menu-span {
+    margin: 10px;
+}
+
+.deivce-block-title {
+    margin-bottom: 30px;
+    color: #1dc7e6;
+}
+
+.device_table thead th {
+    color: black;
+    background-color: #8EE4F1;
+    font-family: 微软字体;
+    border-left: 1px #FFFFFF solid;
+    text-align: center;
+
+}
+
+.device_table tbody td {
+    border-left: 1px #FFFFFF solid;
+    font-family: 微软字体;
+    text-align: center;
+    padding-top: 20px;
+    vertical-align:middle !important;
+}
+
+.device_table tbody td div {
+
+    position: relative;
+    top: -10px;
+}
+
+.device_table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+
+}
+
+.triangle_con {
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top: 15px solid #FFFFFF;
+    position: relative;
+    left: 45%;
+}
+
+/**
+ *  input 样式与Dialog
+ **/
+.my-btn {
+    color: white;
+    padding: 8px;
+    font-family: 微软字体;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.my-btn-primary {
+    background-color: #5DCFE9;
+}
+
+.my-btn-danger{
+    background-color: #FF6D5E;
+}
+
+.my-btn-default {
+    color: #1dc7e6;
+    background-color: white;
+    border: solid #5DCFE9 1px;
+}
+
+.my-btn-gray {
+    border: solid #999 1px;
+    background-color: white;
+    color:#999;
+}
+
+.my-btn-login {
+    background: linear-gradient(#1dc6e7,#1ce3bc);
+}
+
+.ui-dialog-titlebar {
+    background-color: #5DCFE9;
+}
+
+.form {
+    text-align: center;
+}
+.form-item {
+    position: relative;
+    clear: left;
+    float: left;
+
+}
+
+.form-item-input{
+   height: 40px;
+}
+
+.form-item-input .k{
+    display: block;
+    right: 40px;
+    top:8px;
+    text-align: right;
+}
+
+.form-item  .k{
+    position: absolute;
+    height: 24px;
+    line-height: 24px;
+    color: #999999;
+}
+
+.form-item .ipt-text {
+    padding: 7px 10px;
+    line-height: 24px;
+    background: #fff;
+    border: 1px #d9d9d9 solid;
+    font-size: 14px;
+    color: #000;
+    border-radius: 4px;
+}
+
+
+.form-lable{
+    position: absolute;
+    top:10px;
+    right: 20%;
+    color: #999;
+}
+
+.form-input{
+    position: relative;
+}
+
+.ui-dialog-title{
+    color: #fff;
+    text-align: center;
+}
+
+/* 下拉按钮样式 */
+.dropbtn {
+    padding: 7px 10px;
+    line-height: 24px;
+    background: #fff;
+    border: 1px #d9d9d9 solid;
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+    border-radius: 4px;
+}
+
+.dropbtn .type {
+    float: right;
+    color: #999;
+}
+
+.dropbtn .icon_def {
+    position: relative;
+    top: -13px;
+    left: 90%;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #999;
+
+}
+
+/* 容器 <div> - 需要定位下拉内容 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 下拉内容 (默认隐藏) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* 下拉菜单的链接 */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* 鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+/* 在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover  .dropbtn .icon_def{
+    position: relative;
+    top: -13px;
+    left: 90%;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #5DCFE9;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+    background-color: #E5E5E5;
+}
+
+
+/* 密码ICON*/
+.icon_pwd {
+    background: url(../img/pwd.png) no-repeat right center;
+    position: absolute;
+    top: 8px;
+    right: 12%;
+}
+
+.verticality_line{
+    height: 1px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.horizontal_line{
+    width: 2px;
+    border-left: 1px solid #ddd;
+    text-align: center;
+
+}
+
+.horizontal_line_blue{
+    width: 2px;
+    border-left: 1px solid #5DCFE9;
+    text-align: center;
+}
+
+.text_gray {
+    color: #999;
+}
+
+.text_blue {
+    color: #5DCFE9;
+}
+
+.login_block {
+    background-color:#fff;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 200px;
+    min-width: 100px;
+    font-family: 微软字体;
+}
+
+.login_input {
+
+}
+
+.login_lable {
+
+}
+
+/**
+ * 主页样式
+ **/
+.navbar-nav-txt {
+    font-family: 微软雅黑 !important;
+    font-size: 24px !important;
+    color:#fff !important;
+    opacity:0.5;
+    margin-top: 80px;
+}
+
+.navbar-nav-txt:hover{
+    font-weight: bold;
+    color: #fff;
+    opacity:1;
+}
+
+
+.navbar-nav-txt-active {
+    font-weight: bold;
+    color: #fff;
+    opacity:1;
+}
+
+
+
+.navbar-nav-margin {
+    margin-left: 100px;
+}
+
+
+.navbar-nav-icon {
+    margin-top: 36px;
+}
+
+
+.navbar-nav-right-profile{
+    font-size: 22px;
+    color:#fff !important;
+    margin-top: 80px;
+}
+
+.navbar-nav-right-profile:focus{
+    background-color: transparent !important;
+}
+
+#my_profile:focus{
+    background-color: transparent !important;
+}
+
+.open>a:focus{
+    background-color: transparent !important;
+}
+
+/*
+ * 路由器页面样式
+ */
+.label_upload {
+    color: #3CE7C1;
+}
+.label_download {
+    color: #1dc7e6;
+}
+.label_gray {
+    color: #8D8D8D;
+}
+.navbar-nav-txt {
+    font-family: 微软雅黑 !important;
+    font-size: 24px !important;
+    color:#fff !important;
+    opacity:0.5;
+    margin-top: 80px;
+}
+
+.navbar-nav-txt:hover{
+    font-weight: bold;
+    color: #fff;
+    opacity:1;
+}
+
+
+.navbar-nav-txt-active {
+    font-weight: bold;
+    color: #fff;
+    opacity:1;
+}
+
+
+
+.navbar-nav-margin {
+    margin-left: 100px;
+}
+
+
+.navbar-nav-icon {
+    margin-top: 36px;
+}
+
+/**-------------------------------------------------------------------**/
+
+
+/**
+  * 弹框样式
+  */
+.ui-dialog-titlebar {
+    background-color: #5DCFE9;
+}
+
+/**-----------------------------------------------------------------**/
+
+.icon_pwd {
+    background: url(../img/pwd.png) no-repeat right center;
+    position: absolute;
+    top: 8px;
+    right: 12%;
+}
+
+
+.verticality_line{
+    height: 1px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.horizontal_line{
+    width: 2px;
+    border-left: 1px solid #ddd;
+    text-align: center;
+
 }

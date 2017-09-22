@@ -1,301 +1,53 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WI-FI管理</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/titatoggle-dist.css" rel="stylesheet">
- 	<link href="css/common.css" rel="stylesheet">
- 	<link href="css/response.css" rel="stylesheet">
-	<link href="css/titatoggle-dist.css" rel="stylesheet">
-	  <script src="plugs/jquery/jquery.min.js"></script>
-	  <script src="plugs/bootstrap/bootstrap.min.js"></script>
-    <!--[if lt IE 9]>
-      <script src="plugs/other/html5shiv.min.js"></script>
-      <script src="plugs/other/respond.min.js"></script>
-    <![endif]-->
-
-	  <style>
-		  .sub-menu-title .menu-span{
-			  margin: 10px;
-		  }
-		  
-	      .deivce-block-title{
-			  margin-bottom: 30px;color: #1dc7e6;
-		  }
-		  
-		   table#device_table  thead  th{
-			  color:black; 
-			  background-color: #8EE4F1;
-			  font-family: 微软字体;
-              border-left: 1px #FFFFFF solid;
-			  text-align: center;
-			  !important;
-		  }
-		  
-		  #device_table  tbody  td{
-			  border-left: 1px #FFFFFF solid;
-			  font-family: 微软字体;
-			  padding-top: 20px;
-		  }
-
-		  #device_table  tbody td div{
-	
-			  padding-top:0px;
-			  position: relative;
-			  top: -10px;
-		  }
-
-		 #device_table > thead > tr > th {
-			  vertical-align: bottom;
-			  border-bottom: 1px solid #ddd;
-			  !important;
-		  }
-		  
-	  </style>
-  </head>
-  <body>
-	<header>
-		<nav class="navbar navbar-default" id="default-menu">
-		  <div class="container">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a class="navbar-brand" href="#"><img src="images/logo.png"  class="img-responsive"/></a>
-		    </div>
-		
-		    <!-- Collect the nav links, forms, and other content for toggling -->
-		    <div class="collapse navbar-collapse" id="menu">
-		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">路由状态 <span class="sr-only">(current)</span></a></li>
-		        <li><a href="#">常用设置</a></li>
-		        <li><a href="#">高级设置</a></li>
-		      </ul>
-		
-		      <ul class="nav navbar-nav navbar-right">
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My name <span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		            <li><a href="#">修改名称</a></li>
-		            <li><a href="#">系统升级</a></li>
-		            <li><a href="#">下载客户端</a></li>
-		            <li><a href="#">重启</a></li>
-		            <li><a href="#">注销</a></li>
-		            
-		          </ul>
-		        </li>
-		      </ul>
-		    </div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid -->
-		</nav>
-		
- 	</header>
-
-
-
-
-	<section id="status-menu" class="container" >
-		<div class="row" >
-
-			    <div class="col-md-4 col-lg-4 col-sm-4">
-					<div class="center-block sub-menu-block sub-menu-active">
-						<div class="sub-menu-img">
-							<img src="images/zhongduanshebei-.png" class="img-responsive center-block"/>
-						</div>
-						<div  class="text-center sub-menu-title"><span class="menu-span">-</span>终端设备<span class="menu-span">-</span></div>
-					</div>
-				</div>
-
-				<div class="col-md-4 col-lg-4 col-sm-4">
-					<div class="center-block sub-menu-block sub-menu-inactive">
-						<div class="sub-menu-img">
-							<img src="images/luyou--.png" class="img-responsive center-block"/>
-						</div>
-						<div  class="text-center sub-menu-title"><span class="menu-span">-</span>路由器<span class="menu-span">-</span></div>
-					</div>
-				</div>
-
-				<div class="col-md-4 col-lg-4 col-sm-4">
-					<div class="center-block sub-menu-block sub-menu-inactive">
-						<div class="sub-menu-img">
-							<img src="images/hulianwang-.png" class="img-responsive center-block"/>
-						</div>
-						<div class="text-center sub-menu-title"><span class="menu-span">-</span>互联网<span class="menu-span">-</span></div>
-					</div>
-				</div>
-
-			</div>
-
-
-	</section>
-
-
-  	<section id="devices" class="container">
-  		<div class="devices-block">
-			<div class="row">
-				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-					<h4 class="deivce-block-title">网络连接设备</h4>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-1">
-					<img src="images/shebei.png">  
-				</div>
-				<div class="col-md-2">
-					<label>0C:82:68:36:27:BE</label>
-					<label style="color: #999999">已连接：4分30秒</label>
-				</div>
-				<div class="col-md-3 col-md-offset-1" style="margin-top: 30px">
-					<label>IP地址：192.168.31.19</label>
-				</div>
-				<div class="col-md-3" style="margin-top: 30px">
-					<label>MAC地址：192.168.31.19</label>
-				</div>
-				<div class="col-md-2" style="margin-top: 15px">
-					<div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
-						<label>
-							<input type="checkbox" checked=""><span></span>
-						</label>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				  <div class="clearfix"></div>
-			</div>
-		</div>
-	</section>
-	
-	<section id="channel-devices" class="container">
-  		
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="chan-devices-block">
-						<table class="table table-hover" id="device_table" >
-					       <caption><h4 class="deivce-block-title">2.4G连网设备</h4></caption>
-						   <thead>
-							  <tr>
-								 <th>名称</th>
-								 <th>IP地址</th>
-								 <th>MAC地址</th>
-								 <th>操作</th>
-							  </tr>
-						   </thead>
-						   <tbody>
-							  <tr>
-								 <td>jiangTing</td>
-								 <td>192.168.31.19</td>
-								 <td>0C:82:68:36:27:BE</td>
-								 <td>
-								 	<div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
-											<label>
-												<input type="checkbox" checked=""><span></span>
-											</label>
-								     </div>
-							     </td>
-							  </tr>
-							   <tr>
-								 <td>jiangTing</td>
-								 <td>192.168.31.19</td>
-								 <td>0C:82:68:36:27:889</td>
-								 <td>
-								 	<div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
-											<label>
-												<input type="checkbox" checked=""><span></span>
-											</label>
-								     </div>
-							     </td>
-							  </tr>
-						   </tbody>
-				        </table>
-					</div>
-				</div>
-			</div>
-	</section>
-	
-		<section id="channel-devices" class="container">
-  		
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="chan-devices-block">
-						<table class="table table-hover" id="device_table" >
-					       <caption><h4 class="deivce-block-title">5G连网设备</h4></caption>
-						   <thead>
-							  <tr>
-								 <th>名称</th>
-								 <th>IP地址</th>
-								 <th>MAC地址</th>
-								 <th>操作</th>
-							  </tr>
-						   </thead>
-						   <tbody>
-							  <tr>
-								 <td>jiangTing</td>
-								 <td>192.168.31.19</td>
-								 <td>0C:82:68:36:27:BE</td>
-								 <td>
-								 	<div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
-											<label>
-												<input type="checkbox" checked=""><span></span>
-											</label>
-								     </div>
-							     </td>
-							  </tr>
-							   <tr>
-								 <td>jiangTing</td>
-								 <td>192.168.31.19</td>
-								 <td>0C:82:68:36:27:889</td>
-								 <td>
-								 	<div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
-											<label>
-												<input type="checkbox" checked=""><span></span>
-											</label>
-								     </div>
-							     </td>
-							  </tr>
-						   </tbody>
-				        </table>
-					</div>
-				</div>
-			</div>
-	</section>
-	
-	
-	
-	
-	
-	
-	<footer  id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12">
-					<div class="text-center">
-						<div class="inline-block">系统版本：3.3.1稳定版</div> <div class="inline-block margin-left-20">MAC地址：4C-CC-6A-C0-C1-53</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12">
-					<div class="text-center footer-top-15">
-						<div class="inline-block">2017微网路由</div>
-						<div class="inline-block footer-space">|</div>
-						<div class="inline-block">常见问题</div>
-						<div class="inline-block footer-space">|</div>
-						<div class="inline-block">服务热线：0755-22675427</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	
-	
-	
+    <link href="css/titatoggle-dist.css" rel="stylesheet">
+    <link href="css/response.css" rel="stylesheet">
+    <link href="css/titatoggle-dist.css" rel="stylesheet">
+    <link href="plugs/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
     <script src="plugs/jquery/jquery.min.js"></script>
     <script src="plugs/bootstrap/bootstrap.min.js"></script>
-    <script src="js/commons/common.js"></script>
-  </body>
+    <!--[if lt IE 9]>
+    <script src="plugs/other/html5shiv.min.js"></script>
+    <script src="plugs/other/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<div>
+    <div ng-view></div>
+    <loading></loading>
+</div>
+
+<footer  id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="text-center">
+                    <div class="inline-block">系统版本：3.3.1稳定版</div> <div class="inline-block margin-left-20">MAC地址：4C-CC-6A-C0-C1-53</div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12">
+                <div class="text-center footer-top-15">
+                    <div class="inline-block">2017微网路由</div>
+                    <div class="inline-block footer-space">|</div>
+                    <div class="inline-block">常见问题</div>
+                    <div class="inline-block footer-space">|</div>
+                    <div class="inline-block">服务热线：0755-22675427</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+<script data-main="js/main" src="plugs/require/require.js"></script>
+
 </html>

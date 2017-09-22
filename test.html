@@ -2,51 +2,242 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/titatoggle-dist.css" rel="stylesheet">
     <link href="plugs/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-    <title>Title</title>
+    <link href="css/bootstrap.css">
+    <link href="css/bc.css" rel="stylesheet">
     <script src="plugs/jquery/jquery.min.js"></script>
+    <script src="plugs/selectBeauty/selectbeautify.js"></script>
     <script src="plugs/jquery-ui/jquery-ui.min.js"></script>
+    <style>
+        /* 下拉按钮样式 */
+        .dropbtn {
+            padding: 7px 10px;
+            line-height: 24px;
+            background: #fff;
+            border: 1px #d9d9d9 solid;
+            font-size: 14px;
+            color: #000;
+            text-align: left;
+            border-radius: 4px;
+        }
 
+        .dropbtn .type {
+            float: right;
+            margin-right: 10px;
+            color: #999;
+        }
+
+        .dropbtn .icon_def {
+            position: relative;
+            top: -13px;
+            left: 35px;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 7px solid #999;
+
+        }
+
+        /* 容器 <div> - 需要定位下拉内容 */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* 下拉内容 (默认隐藏) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        /* 下拉菜单的链接 */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* 鼠标移上去后修改下拉菜单链接颜色 */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        /* 在鼠标移上去后显示下拉菜单 */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover  .dropbtn .icon_def{
+            position: relative;
+            top: -13px;
+            left: 35px;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 7px solid #5DCFE9;
+        }
+
+        /* 当下拉内容显示后修改下拉按钮的背景颜色 */
+        .dropdown:hover .dropbtn {
+            background-color: #E5E5E5;
+        }
+
+
+
+
+
+    </style>
 </head>
-<script>
-    $(function() {
-        $( "#dialog" ).dialog({
-            autoOpen: false,
-            show: {
-                effect: "blind",
-                duration: 1000
-            },
-            hide: {
-                effect: "explode",
-                duration: 1000
-            }
-        });
+<body>
+<div class="test">
+   <div class="row">
+       <div class="dropdown" id="test" style="z-index: 100;">
+           <div class="dropbtn " value=""  style="width: 200px" ><span class="text">下拉菜单</span><span class="type">类型 <a class="icon_def"></a></span></div>
 
-        $( "#opener" ).click(function() {
-            $( "#dialog" ).dialog( "open" );
-        });
+           <div class="dropdown-content" style="width:210px;">
+               <a>测试</a>
+               <a>菜鸟教程 2</a>
+               <a>菜鸟教程 3</a>
+           </div>
+       </div>
+   </div>
+
+   <div class="row">
+       <div class="dropdown" id="test2">
+           <div class="dropbtn " value=""  style="width: 200px" ><span class="text">下拉菜单</span><span class="type">类型 <a class="icon_def"></a></span></div>
+
+           <div class="dropdown-content" style="width:210px;">
+               <a>测试</a>
+               <a>菜鸟教程 2</a>
+               <a>菜鸟教程 3</a>
+           </div>
+       </div>
+   </div>
+</div>
+
+<!--<div class="form-item-select">
+    <label class="k">无线信道</label>
+    <span class="v">
+        <select id="channel_test" name="channel" class="beautify channel" data-id="0" style="display: none;">
+
+                <option value="0" selected="">
+                自动
+
+                        (9)
+
+
+                </option>
+
+                <option value="1">
+
+                    1
+
+                </option>
+
+                <option value="2">
+
+                    2
+
+                </option>
+
+                <option value="3">
+
+                    3
+
+                </option>
+
+                <option value="4">
+
+                    4
+
+                </option>
+
+                <option value="5">
+
+                    5
+
+                </option>
+
+                <option value="6">
+
+                    6
+
+                </option>
+
+                <option value="7">
+
+                    7
+
+                </option>
+
+                <option value="8">
+
+                    8
+
+                </option>
+
+                <option value="9">
+
+                    9
+
+                </option>
+
+                <option value="10">
+
+                    10
+
+                </option>
+
+                <option value="11">
+
+                    11
+
+                </option>
+
+                <option value="12">
+
+                    12
+
+                </option>
+
+                <option value="13">
+
+                    13
+
+                </option>
+
+        </select>
+        <div class="ipt-text dummy select-open-input">
+                自动
+
+                        (9)
+
+
+                </div>
+        </span>
+    <em class="t"></em>
+</div>-->
+</body>
+<script>
+   $('.dropdown-content a').click(function(){
+        $(this).parent().hide();
+        $(this).parents('.dropdown').find('.dropbtn .text').html($(this).text());
+    });
+
+    $('.dropbtn').hover(function(){
+        $(this).parents('.dropdown').find(".dropdown-content").show();
+    },function(){
+
     });
 </script>
-<body>
-<div class="container">
-    <div class="checkbox checkbox-slider-lg checkbox-slider--b-flat  checkbox-slider-info">
-        <label>
-            <input type="checkbox"><span></span>
-        </label>
-    </div>
-</div>
-<div class="checkbox checkbox-slider--b-flat">
-    <label>
-        <input type="checkbox" checked=""><span>checked</span>
-    </label>
-</div>
-<div id="dialog" title="Basic dialog">
-    <p>这是一个动画显示的对话框，用于显示信息。对话框窗口可以移动，调整尺寸，默认可通过 'x' 图标关闭。</p>
-</div>
-
-<button id="opener">打开对话框</button>
-
-</body>
-
+<script>
+    //$.selectBeautify({container:'#channel_test'});
+</script>
 </html>

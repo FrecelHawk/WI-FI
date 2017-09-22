@@ -1,3 +1,7 @@
 /**
- * Created by vitamin on 2017/9/7.
+ * 初始化MODULE绑定
  */
+define(['angular'], function (angular) {
+    var app = angular.module('webapp', ['ngRoute', 'angular-md5']);
+    return app;
+});
