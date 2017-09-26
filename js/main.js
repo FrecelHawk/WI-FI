@@ -74,7 +74,7 @@ require(['jquery', 'angular', 'angular-md5', 'jquery-ui', 'bootstrap', 'highchar
 
 
     $(function () {
-        var domain = "http://api.omc.l";
+        var domain = "http://127.0.0.1:8999/data/";
         var devices_set = [
             {name:"终端设备",url:"#/index"},
             {name:"路由器",url:"#/router"},

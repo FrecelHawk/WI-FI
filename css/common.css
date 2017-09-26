@@ -509,3 +509,75 @@ body {
     text-align: center;
 
 }
+
+.login_circle {
+    width: 120px;
+    height: 120px;
+    background-color: #1dc6e7;
+    -webkit-border-radius: 100px;
+    position: relative;
+    top: 50px;
+    left:20px;
+}
+
+.login_circle_icon{
+    background-image: url("img/dengluluyou.png");
+    position: relative;
+    top:30px;
+    left: 28px;
+    position: relative;
+}
+
+.login_text{
+    position: relative;
+    top:60px;
+    left:50px;
+    font-size: 20px;
+    color: #999;
+}
+.login_input {
+    margin-top: 100px;
+    width: 400px;
+    height: 58px;
+    border-radius: 10px;
+    border:1px solid #BFBFBF;
+    z-index: 100;
+}
+.login_input_pwd{
+    border:0px;
+    height: 55px;
+    width: 200px;
+    margin-left: 10px;
+}
+
+.login_input_pwd:focus{
+    outline:none;
+}
+.login_pwd_icon {
+    position: relative;
+}
+
+
+.my-btn-login {
+    background: linear-gradient(#1dc6e7 0%,#1ce3bc 100%);
+}
+
+.company_tcl_log{
+    position: relative;
+    top: -50px;
+    left:25px;
+    display: none;
+}
+
+.company_jiuzhou{
+    position: relative;
+    top:-50px;
+    left:15px;
+    display: none;
+}
+
+.company_log{
+    position: relative;
+    top:-50px;
+    left:15px;
+}
