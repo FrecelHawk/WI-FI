@@ -12,8 +12,11 @@
     <link href="css/response.css" rel="stylesheet">
     <link href="css/titatoggle-dist.css" rel="stylesheet">
     <script src="plugs/jquery/jquery.min.js"></script>
+    <script src="plugs/layer/layer.js"></script>
+    <script src="plugs/jquery-cookie/jquery.cookie.js"></script>
     <script src="plugs/bootstrap/bootstrap.min.js"></script>
     <script src="plugs/md5/js/md5.js"></script>
+    <script src="js/commons/common.js"></script>
 
     <!--[if lt IE 9]>
     <script src="plugs/other/html5shiv.min.js"></script>
@@ -59,64 +62,4 @@
       </div>
   </section>
 </body>
-<script>
-    $(function(){
-          var url = "http://192.168.1.1/cgi-bin/router.csp?";
-
-          $('.my-btn-login').click(function(){
-
-              var name ="admin";
-              var str =$('.login_input_pwd').val();
-              var pwd =md5(name+str);
-              $.ajax({
-                  type: "POST",
-                  url: url + "fname=system&opt=login&function=set&usrid=" + pwd,
-                  success: function (data) {
-                      var ret = JSON.parse(data);
-                      if(ret.error==0){
-                          alert('登录成功！');
-
-                      }
-                  }, complete: function (XHR, TS) {
-                      XHR = null;
-                  }, error: function (XHRequest, status, data) {
-                      console.log(status);
-                  }
-              });
-
-          });
-    });
-
-
-    function userLogin(str) {
-        var action = "http://192.168.1.1/cgi-bin/router.csp?";
-        var name = 'admin';
-        var str_md5 = md5(name + str);
-        $.ajax({
-            type: "POST",
-            url: action + "fname=system&opt=login&function=set&usrid=" + str_md5 + "&math=" + Math.random(),
-            dataType: "JSON",
-            success: function (data) {
-                if (data.error == 0) {
-                    $.cookie('lstatus', true);
-                    $.cookie('usrid', str_md5);
-                    checkConfig();
-                } else if (data.error == 10001) {
-                    getMsg(invalid_password);
-                    $("#user_login").text(relogin);
-                    $("#user_login").attr("disabled", false);
-                } else {
-                    getMsg(login_failed);
-                    $("#user_login").text(relogin);
-                    $("#user_login").attr("disabled", false);
-                }
-            }, complete: function (XHR, TS) {
-                XHR = null;
-            }, error: function (XHRequest, status, data) {
-                getMsg(XHRequest.status);
-                XHRequest.abort();
-            }
-        });
-    }
-</script>
 </html>

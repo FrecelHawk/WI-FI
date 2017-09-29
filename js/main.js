@@ -7,6 +7,7 @@ require.config({
     paths: {
         "jquery": "plugs/jquery/jquery.min",
         "jquery-ui":"plugs/jquery-ui/jquery-ui.min",
+        "jquery-cookie":"plugs/jquery-cookie/jquery.cookie",
         "bootstrap":"plugs/bootstrap/bootstrap.min",
         "highcharts":"plugs/highcharts/highcharts",
         "exporting":"plugs/highcharts/modules/exporting",
@@ -63,13 +64,18 @@ require.config({
         'exporting':{
             deps:['jquery','highcharts'],
             exports:'exporting'
+        },
+        'jquery-cookie':{
+            deps:['jquery'],
+            exports:'jquery-cookie'
         }
+
 
     }
 });
 
 
-require(['jquery', 'angular', 'angular-md5', 'jquery-ui', 'bootstrap', 'highcharts', 'exporting', 'angular-route', 'angular-sanitize', 'app', 'httpService', 'terminalCtrl', 'routerCtrl', 'internetCtrl', 'wifiSetCtrl', 'internetSetCtrl', 'securityCtrl', 'networkSetCtrl', 'systemStatusCtrl','qosCtrl','dhcpCtrl','ddnsCtrl','portRelayCtrl','vpnCtrl','otherCtrl', 'router'], function ($, angular) {
+require(['jquery', 'angular', 'angular-md5', 'jquery-ui','jquery-cookie', 'bootstrap', 'highcharts', 'exporting', 'angular-route', 'angular-sanitize', 'app', 'httpService', 'terminalCtrl', 'routerCtrl', 'internetCtrl', 'wifiSetCtrl', 'internetSetCtrl', 'securityCtrl', 'networkSetCtrl', 'systemStatusCtrl','qosCtrl','dhcpCtrl','ddnsCtrl','portRelayCtrl','vpnCtrl','otherCtrl', 'router'], function ($, angular) {
 
 
 
@@ -95,6 +101,7 @@ require(['jquery', 'angular', 'angular-md5', 'jquery-ui', 'bootstrap', 'highchar
         ];
         var navivations = [{name:'路由状态',url:'#/index'},{name:'常用设置',url:'#/wifiSet'},{name:'高级设置',url:'#/qos'}];
 
+        var url = "http://192.168.11.1/cgi-bin/router.csp?";
 
         localStorage.setItem('domain',domain);
         angular.bootstrap(document, ["webapp"]);
@@ -120,6 +127,110 @@ require(['jquery', 'angular', 'angular-md5', 'jquery-ui', 'bootstrap', 'highchar
 
 
          });
+
+
+         $(document).on('click','#profile li',function(){
+
+             if($(this).text()=="系统升级") upgrade();
+
+             if($(this).text()=="下载客户端") downloadClient();
+
+             if($(this).text()=="重启") reboot();
+
+             if($(this).text()=="注销") loginout();
+
+         });
+
+
+
+         //升级
+        function  upgrade(){
+
+            var data = {fname:"system",opt:"local_firmup",function:"set"};
+            layer.alert('路由器升级', {
+                skin: 'layui-layer-lan'
+                ,closeBtn: 2
+                ,anim: 1 //动画类型
+            },function(){
+                $.ajax({
+                    type: "POST",
+                    xhrFields: {withCredentials: true},
+                    url: url + $.param(data),
+                    success: function (data) {
+                        var ret = JSON.parse(data);
+                        if(ret.error==0){
+                        }else{
+                        }
+                    }, complete: function (XHR, TS) {
+                        XHR = null;
+                    }, error: function (XHRequest, status, data) {
+                        console.log(status);
+                    }
+                });
+                layer.closeAll();
+            });
+        }
+
+
+        //下载客户端
+        function downloadClient(){
+            layer.alert('下载客户端', {
+                skin: 'layui-layer-lan'
+                ,closeBtn: 2
+                ,anim: 1 //动画类型
+            },function(){
+                layer.closeAll();
+            });
+        }
+
+        //重新启动
+        function reboot(){
+            layer.alert('重新启动', {
+                skin: 'layui-layer-lan'
+                ,closeBtn: 2
+                ,anim: 1 //动画类型
+            },function(){
+                layer.closeAll();
+                $.ajax({
+                    type: "POST",
+                    xhrFields: {withCredentials: true},
+                    url: url + "fname=system&opt=setting&function=set&action=reboot",
+                    success: function (data) {
+                        var ret = JSON.parse(data);
+                        if(ret.error==0){
+                        }else{
+                        }
+                    }, complete: function (XHR, TS) {
+                        XHR = null;
+                    }, error: function (XHRequest, status, data) {
+                        console.log(status);
+                    }
+                });
+
+            });
+        }
+
+        //注销
+        function loginout(){
+            layer.alert('退出登录', {
+                skin: 'layui-layer-lan'
+                ,closeBtn: 2
+                ,anim: 1 //动画类型
+            },function(){
+                layer.closeAll();
+                setTimeout(function () {
+                    $.cookie('lstatus', false, {path: '/'});
+                    $.cookie('usrid', null);
+                    document.location = "login.html";
+                }, 3000);
+            });
+
+        }
+
+
+
+
+
     });
 
 

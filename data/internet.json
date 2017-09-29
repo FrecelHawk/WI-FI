@@ -1,0 +1,19 @@
+{
+  "fname": "net",
+  "opt": "wan_conf",
+  "function": "get",
+  "mode": 2,
+  "dns": "8.8.8.8",
+  "dns1": "",
+  "gw":"192.168.1.1",
+  "ip":"192.168.11.1",
+  "mac": "78:A3:51:2B:78:49",
+  "mtu": "1500",
+  "hostmac": "50:7b:9d:bf:48:4b",
+  "rawmac": "69:6E:75:78:2D:33",
+  "cur_speed": 20108815,
+  "up_speed": 21467429,
+  "down_bytes": 2146742944,
+  "up_bytes": 2010881556,
+  "error": 0
+}

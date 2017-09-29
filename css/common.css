@@ -521,7 +521,7 @@ body {
 }
 
 .login_circle_icon{
-    background-image: url("img/dengluluyou.png");
+  /**  background-image: url("img/dengluluyou.png");**/
     position: relative;
     top:30px;
     left: 28px;
@@ -580,4 +580,8 @@ body {
     position: relative;
     top:-50px;
     left:15px;
+}
+
+.line_top_margin {
+    margin-top: 20px;
 }
