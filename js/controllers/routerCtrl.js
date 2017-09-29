@@ -9,6 +9,27 @@ define(['app','jquery'], function(app,$){
 
 
 
+
+        $.getJSON('data/router_info.json','',function(result){
+
+              if(result.error==0){
+                  $scope.$apply(function(){
+                      $scope.mac = result.mac;
+                  });
+              }
+        });
+
+
+        $.getJSON('data/firmware.json','',function(result){
+              if(result.error==0){
+                  $scope.$apply(function(){
+                      $scope.localfirm_version = result.localfirm_version;
+                      $scope.model = result.model;
+                  });
+              }
+        });
+
+
         var data = [[0,50],[1,100],[2,150],[3,200],[4,250]];
 
 

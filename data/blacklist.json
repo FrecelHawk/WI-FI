@@ -1,0 +1,28 @@
+{
+  "fname": "net",
+  "opt": "access_list",
+  "function": "get",
+  "mac_list": [
+    {
+      "name": "name1",
+      "mac": "aa:bb:cc:dd:ee:88",
+      "access": "ACCEPT"
+    },
+    {
+      "name": "name1",
+      "mac": "aa:bb:cc:dd:ee:99",
+      "access": "ACCEPT"
+    },
+    {
+      "name": "name1",
+      "mac": "aa:bb:cc:dd:ee:77",
+      "access": "ACCEPT"
+    },
+    {
+      "name": "name1",
+      "mac": "0C:82:68:36:27:883",
+      "access": "ACCEPT"
+    }
+  ],
+  "error": 0
+}

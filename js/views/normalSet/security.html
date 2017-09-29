@@ -13,26 +13,14 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav">
+            <div class="collapse navbar-collapse" >
+                <ul class="nav navbar-nav" id="menu">
                     <li ><a  class="navbar-nav-txt navbar-nav-margin ">路由状态</a></li>
                     <li ><a  class="navbar-nav-txt navbar-nav-txt-active">常用设置</a></li>
                     <li ><a class="navbar-nav-txt ">高级设置</a></li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right " >
-                    <li class="dropdown">
-                        <a id="my_profile" href="#" class="dropdown-toggle navbar-nav-right-profile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  >My name <span class="caret"></span></a>
-                        <ul class="dropdown-menu" style="border-radius: 10px;text-align: center;">
-                            <li style="font-weight: bold;"><a href="#">修改名称</a></li>
-                            <li><a href="#">系统升级</a></li>
-                            <li><a href="#">下载客户端</a></li>
-                            <li><a href="#">重启</a></li>
-                            <li><a href="#">注销</a></li>
-
-                        </ul>
-                    </li>
-                </ul>
+                <div ng-include="'js/views/profile.html'"></div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
@@ -119,7 +107,7 @@
         <div class="row">
             <div class="col-md-6">
                 <label class="radio-inline ">
-                    <input type="radio" name="dns_config" value="1"> 黑名单模式（不允许列表中设备访问）
+                    <input type="radio" name="dns_config" value="1" checked> 黑名单模式（不允许列表中设备访问）
                 </label>
             </div>
 
@@ -146,7 +134,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="chan-devices-block">
-                    <table class="table table-hover device_table" >
+                    <table class="table table-hover device_table"  id="black_list">
                         <thead>
                         <tr>
                             <th>设备名称</th>
@@ -155,23 +143,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>jiangTing</td>
-                            <td>192.168.31.19</td>
-                            <td>
-                                <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
-                            </td>
 
-                        </tr>
-                        <tr>
-                            <td>jiangTing</td>
-                            <td>192.168.31.19</td>
-                            <td>
-                                <div class="form-group">
-                                    <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
-                                </div>
-                            </td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -182,8 +154,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div style="text-align: center;">
-                    <span class="my-btn my-btn-primary" style="width: 150px;" >从在线列表添加</span>
-                    <span class="my-btn my-btn-default" style="width: 150px;" >手工添加</span>
+                    <span class="my-btn my-btn-primary" style="width: 150px;" ng-click="onlineList()">从在线列表添加</span>
+                    <span class="my-btn my-btn-default" style="width: 150px;" ng-click="manual()">手工添加</span>
                 </div>
 
             </div>
@@ -211,7 +183,7 @@
                         <div class="form-group">
                             <div class="col-md-7 form-item form-input  ">
                                 <span class="form-lable">原密码</span>
-                                <input type="password" class="form-control form-item-input "  maxlength="5" value="0.0">
+                                <input type="password" class="form-control form-item-input " ng-model="manager.originalPwd"  maxlength="5" value="0.0">
                             </div>
                         </div>
                     </div>
@@ -222,7 +194,7 @@
                         <div class="form-group">
                             <div class="col-md-7 form-item form-input ">
                                 <span class="form-lable">新密码</span>
-                                <input type="password" class="form-control form-item-input "  maxlength="5" value="0.0">
+                                <input type="password" class="form-control form-item-input "  ng-model="manager.newPwd" maxlength="5" value="0.0">
                             </div>
                         </div>
                     </div>
@@ -233,7 +205,7 @@
                         <div class="form-group">
                             <div class="col-md-7 form-item form-input ">
                                 <span class="form-lable">确认密码</span>
-                                <input type="password" class="form-control form-item-input "  maxlength="5" value="0.0">
+                                <input type="password" class="form-control form-item-input " ng-model="manager.surePwd"  maxlength="5" value="0.0">
                             </div>
                         </div>
                     </div>
@@ -242,7 +214,7 @@
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-md-offset-3" >
                         <div class="form-group">
-                            <span class="my-btn my-btn-primary " style="width: 220px;" >保存</span>
+                            <span class="my-btn my-btn-primary " style="width: 220px;" ng-click="savePwd()" >保存</span>
                         </div>
                     </div>
                 </div>
@@ -285,7 +257,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="chan-devices-block" style="margin-left: 20px; margin-right: 20px;">
-                            <table class="table table-hover device_table"  >
+                            <table class="table table-hover device_table" >
                                 <thead>
                                 <tr>
                                     <th>MAC地址白名单</th>
@@ -293,21 +265,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>jiangTing</td>
-                                    <td>
-                                        <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>jiangTing</td>
-                                    <td>
-                                        <div class="form-group">
+                                    <tr>
+                                        <td>jiangTing</td>
+                                        <td>
                                             <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>jiangTing</td>
+                                        <td>
+                                            <div class="form-group">
+                                                <span class="my-btn my-btn-primary " style="width: 60px;" >删除</span>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -318,3 +290,90 @@
         </div>
     </div>
 </section>
+
+
+<!--
+<div id="autoDialog" title="黑名单列表" class="dialog">
+    <div class="">
+        <div class="form-group">
+            <div class="col-md-8 form-item form-input ">
+                <span class="form-lable">上传</span>
+                <input type="text" class="form-control" maxlength="5" value="0.0">
+                <span class=""
+                      style="right: 50px;color: #999;position: relative;left:100%;top:-30px;margin-left: 20px;">Mbps</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8 form-item form-input ">
+                <span class="form-lable">下载</span>
+                <input type="text" class="form-control" maxlength="5" value="0.0">
+                <span class=""
+                      style="right: 50px;color: #999;position: relative;left:100%;top:-30px;margin-left: 20px;">Mbps</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-8 form-item form-input ">
+                <span class="my-btn my-btn-primary" style="width: 280px;" onclick="add()">确认</span>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+-->
+
+
+<div id="manualDialog" title="手工添加" class="dialog">
+    <div class="">
+        <div class="form-group" >
+            <div class="col-md-12 form-item form-input  ">
+                <span class="form-lable" >名称</span>
+                <input type="text" class="form-control form-item-input"  ng-model="manual.deviceName" >
+            </div>
+        </div>
+        <div class="form-group" >
+            <div class="col-md-12 form-item form-input  " style="margin-top: 20px; margin-bottom: 20px;">
+                <span class="form-lable">MAC地址</span>
+                <input type="text" class="form-control form-item-input"  ng-model="manual.mac" >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-8 form-item form-input ">
+                <span class="my-btn my-btn-primary" style="width: 280px;" ng-click="saveManula()">确认</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="onlineDialog"  title="在线列表" class="dialog">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="chan-devices-block">
+                <table class="table table-hover device_table"  id="onlineList">
+                    <thead>
+                    <tr>
+                        <th>设备名称</th>
+                        <th>MAC地址</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+<!--                        <tr>
+                            <td>jiangTing</td>
+                            <td>192.168.1.1</td>
+                            <td><input type="checkbox" name="box" value="1" checked> </td>
+                        </tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+

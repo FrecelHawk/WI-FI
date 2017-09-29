@@ -1,4 +1,3 @@
-
 <header>
     <nav class="navbar navbar-default" id="default-menu">
         <div class="container">
@@ -14,26 +13,14 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav">
+            <div class="collapse navbar-collapse" >
+                <ul class="nav navbar-nav" id="menu">
                     <li ><a  class="navbar-nav-txt navbar-nav-margin navbar-nav-txt-active">路由状态</a></li>
                     <li ><a  class="navbar-nav-txt">常用设置</a></li>
                     <li ><a class="navbar-nav-txt">高级设置</a></li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right " >
-                    <li class="dropdown">
-                        <a id="my_profile" href="#" class="dropdown-toggle navbar-nav-right-profile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  >My name <span class="caret"></span></a>
-                        <ul class="dropdown-menu" style="border-radius: 10px;text-align: center;">
-                            <li style="font-weight: bold;"><a href="#">修改名称</a></li>
-                            <li><a href="#">系统升级</a></li>
-                            <li><a href="#">下载客户端</a></li>
-                            <li><a href="#">重启</a></li>
-                            <li><a href="#">注销</a></li>
-
-                        </ul>
-                    </li>
-                </ul>
+                <div ng-include="'js/views/profile.html'"></div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
@@ -77,36 +64,11 @@
 </section>
 
 <section  class="devices container">
-    <div class="devices-block">
+    <div class="devices-block" id="line_device">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <h4 class="deivce-block-title">网络连接设备</h4>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-1">
-                <img src="img/shebei.png">
-            </div>
-            <div class="col-md-2">
-                <label>0C:82:68:36:27:BE</label>
-                <label style="color: #999999">已连接：4分30秒</label>
-            </div>
-            <div class="col-md-3 col-md-offset-1" style="margin-top: 30px">
-                <label>IP地址：192.168.31.19</label>
-            </div>
-            <div class="col-md-3" style="margin-top: 30px">
-                <label>MAC地址：192.168.31.19</label>
-            </div>
-            <div class="col-md-2" style="margin-top: 15px">
-                <div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
-                    <label>
-                        <input type="checkbox" checked=""><span></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="clearfix"></div>
         </div>
     </div>
 </section>
@@ -126,31 +88,31 @@
                         <th>操作</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>jiangTing</td>
-                        <td>192.168.31.19</td>
-                        <td>0C:82:68:36:27:BE</td>
-                        <td>
-                            <div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
-                                <label>
-                                    <input type="checkbox" checked=""><span></span>
-                                </label>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>jiangTing</td>
-                        <td>192.168.31.19</td>
-                        <td>0C:82:68:36:27:889</td>
-                        <td>
-                            <div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
-                                <label>
-                                    <input type="checkbox" checked=""><span></span>
-                                </label>
-                            </div>
-                        </td>
-                    </tr>
+                    <tbody id="twoDevice">
+<!--                            <tr>
+                                <td>jiangTing</td>
+                                <td>192.168.31.19</td>
+                                <td>0C:82:68:36:27:BE</td>
+                                <td>
+                                    <div class="checkbox checkbox-slider&#45;&#45;b-flat checkbox-slider-info">
+                                        <label>
+                                            <input type="checkbox" checked=""><span></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>jiangTing</td>
+                                <td>192.168.31.19</td>
+                                <td>0C:82:68:36:27:889</td>
+                                <td>
+                                    <div class="checkbox checkbox-slider&#45;&#45;b-flat checkbox-slider-info">
+                                        <label>
+                                            <input type="checkbox" checked=""><span></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>-->
                     </tbody>
                 </table>
             </div>
@@ -173,31 +135,8 @@
                         <th>操作</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>jiangTing</td>
-                        <td>192.168.31.19</td>
-                        <td>0C:82:68:36:27:BE</td>
-                        <td>
-                            <div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
-                                <label>
-                                    <input type="checkbox" checked=""><span></span>
-                                </label>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>jiangTing</td>
-                        <td>192.168.31.19</td>
-                        <td>0C:82:68:36:27:889</td>
-                        <td>
-                            <div class="checkbox checkbox-slider--b-flat checkbox-slider-info">
-                                <label>
-                                    <input type="checkbox" checked=""><span></span>
-                                </label>
-                            </div>
-                        </td>
-                    </tr>
+                    <tbody id="fiveDevice">
+
                     </tbody>
                 </table>
             </div>

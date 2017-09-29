@@ -13,31 +13,20 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav">
+            <div class="collapse navbar-collapse" >
+                <ul class="nav navbar-nav" id="menu">
                     <li ><a  class="navbar-nav-txt navbar-nav-margin ">路由状态</a></li>
                     <li ><a  class="navbar-nav-txt navbar-nav-txt-active">常用设置</a></li>
-                    <li ><a class="navbar-nav-txt ">高级设置</a></li>
+                    <li ><a  class="navbar-nav-txt ">高级设置</a></li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right " >
-                    <li class="dropdown">
-                        <a id="my_profile" href="#" class="dropdown-toggle navbar-nav-right-profile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  >My name <span class="caret"></span></a>
-                        <ul class="dropdown-menu" style="border-radius: 10px;text-align: center;">
-                            <li style="font-weight: bold;"><a href="#">修改名称</a></li>
-                            <li><a href="#">系统升级</a></li>
-                            <li><a href="#">下载客户端</a></li>
-                            <li><a href="#">重启</a></li>
-                            <li><a href="#">注销</a></li>
-
-                        </ul>
-                    </li>
-                </ul>
+                <div ng-include="'js/views/profile.html'"></div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 
 </header>
+
 
 
 <section id="status-menu" class="container" >
@@ -144,10 +133,13 @@
                         <div class="form-group col-md-offset-3">
                             <div class="form-item form-input">
                                 <div class="dropdown" style="z-index: 100; width: 300px;">
-                                    <div class="dropbtn"  ><span class="text">简体中文</span><span class="type">系统语言 <a class="icon_def"></a></span></div>
-                                    <div class="dropdown-content" style="width: 300px;" >
-                                        <a>香港繁体</a>
-                                        <a>台湾繁体</a>
+                                    <div class="dropbtn"  ><span class="text" id="language_select_txt">中文</span><span class="type">系统语言 <a class="icon_def"></a></span></div>
+                                    <div class="dropdown-content"  id="language_select"  >
+                                        <a ng-value="zh">中文</a>
+                                        <a ng-value="en">英文</a>
+                                        <a ng-value="de">德语</a>
+                                        <a ng-value="fr">法语</a>
+                                        <a ng-value="ja">日语</a>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +162,7 @@
 
                     <div class="row">
                         <div class="row" style="text-align: center">
-                            <span class="my-btn my-btn-primary " style="width: 220px;" >立即恢复</span>
+                            <span class="my-btn my-btn-primary " style="width: 220px;" ng-click="recover()" >立即恢复</span>
                         </div>
                     </div>
                 </div>
@@ -212,7 +204,7 @@
                 </div>
                 <div class="row">
                     <div class="row" style="text-align: center;margin-top: 10px;">
-                        <span class="my-btn my-btn-default" style="width: 220px;" >更改时区</span>
+                        <span class="my-btn my-btn-default" style="width: 220px;" ng-click="changeTimeZone()" >更改时区</span>
                     </div>
                 </div>
                 <div class="row" style="text-align: center;margin-top: 30px;">
@@ -220,7 +212,7 @@
                         <p class="text_gray">2017年09月07日13：56：32</p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="display: none;">
                     <div class="row" style="text-align: center;margin-top: 10px;">
                         <span class="my-btn my-btn-default" style="width: 220px;" >更改时间</span>
                     </div>
@@ -229,3 +221,141 @@
         </div>
     </div>
 </section>
+
+
+
+<div id="autoDialog" title="网络测速" class="dialog" style="overflow-y: hidden;" >
+    <div class="">
+        <div class="form-group">
+            <div class="col-md-8 form-item form-input ">
+                <div class="form-item form-input" >
+                    <div class="dropdown" style=" width: 300px;">
+                        <div class="dropbtn"  ><span class="text" id="timeZoon_txt" >(UTC-12)国际日期变更线西</span><span class="type">系统语言 <a class="icon_def"></a></span></div>
+                        <div class="dropdown-content"  id="timeZoon" style="overflow:scroll; width:300px; height:100px; z-index: 100;">
+                                <a value="UTC+12">(UTC-12)国际日期变更线西</a>
+                                <a value="UTC+11">(UTC-11)萨摩亚群岛</a>
+                                <a value="UTC+11">(UTC-11)协调世界时</a>
+                                <a value="UTC+10">(UTC-10)夏威夷</a>
+                                <a value="UTC+9:30">(UTC-9:30)马克萨斯群岛标准时间</a>
+                                <a value="UTC+9">(UTC-9)阿拉斯加</a>
+                                <a value="UTC+8">(UTC-8)太平洋时间(美国和加拿大)</a>
+                                <a value="UTC+8">(UTC-8)下加利福尼亚州</a>
+                                <a value="UTC+7">(UTC-7)奇瓦瓦,拉巴斯,马萨特兰</a>
+                                <a value="UTC+7">(UTC-7)山地时间(美国和加拿大)</a>
+                                <a value="UTC+7">(UTC-7)亚利桑那</a>
+                                <a value="UTC+6">(UTC-6)瓜达拉哈拉,墨西哥城,蒙特雷</a>
+                                <a value="UTC+6">(UTC-6)萨斯克彻温</a>
+                                <a value="UTC+6">(UTC-6)中部时间(美国和加拿大)</a>
+                                <a value="UTC+6">(UTC-6)中美洲</a>
+                                <a value="UTC+5">(UTC-5)波哥大,利马,基多</a>
+                                <a value="UTC+5">(UTC-5)东部时间(美国和加拿大)</a>
+                                <a value="UTC+5">(UTC-5)印第安纳州(东部)</a>
+                                <a value="UTC+4:30">(UTC-4:30)加拉加斯</a>
+                                <a value="UTC+4">(UTC-4)大西洋时间(加拿大)</a>
+                                <a value="UTC+4">(UTC-4)库亚巴</a>
+                                <a value="UTC+4">(UTC-4)乔治敦,拉巴斯,马瑙斯,圣湖安</a>
+                                <a value="UTC+4">(UTC-4)圣地亚哥</a>
+                                <a value="UTC+4">(UTC-4)亚松森</a>
+                                <a value="UTC+3:30">(UTC-3:30)纽芬兰</a>
+                                <a value="UTC+3">(UTC-3)巴西利亚</a>
+                                <a value="UTC+3">(UTC-3)布宜诺斯艾利斯</a>
+                                <a value="UTC+3">(UTC-3)格陵兰</a>
+                                <a value="UTC+3">(UTC-3)卡宴,福塔雷萨</a>
+                                <a value="UTC+3">(UTC-3)蒙得维的亚</a>
+                                <a value="UTC+2">(UTC-2)协调世界时-02</a>
+                                <a value="UTC+2">(UTC-2)中大西洋</a>
+                                <a value="UTC+1">(UTC-1)佛得角群岛</a>
+                                <a value="UTC+1">(UTC-1)亚速尔群岛</a>
+                                <a value="UTC">(UTC)都柏林,爱丁堡,里斯本,伦敦</a>
+                                <a value="UTC">(UTC)卡萨布兰卡</a>
+                                <a value="UTC">(UTC)蒙罗维亚,雷克雅未克</a>
+                                <a value="UTC">(UTC)协调世界时</a>
+                                <a value="UTC-1">(UTC+1)阿姆斯特丹,柏林,伯尔尼,罗马,斯德歌尔摩,维也纳</a>
+                                <a value="UTC-1">(UTC+1)贝尔格莱德,布拉迪斯拉发,布达佩斯,卢布尔雅那</a>
+                                <a value="UTC-1">(UTC+1)布鲁塞尔,哥本哈根,马德里,巴黎</a>
+                                <a value="UTC-1">(UTC+1)萨拉热窝,斯科普里,华沙,萨格勒布</a>
+                                <a value="UTC-1">(UTC+1)温得和克</a>
+                                <a value="UTC-1">(UTC+1)中非西部</a>
+                                <a value="UTC-2">(UTC+2)安曼</a>
+                                <a value="UTC-2">(UTC+2)贝鲁特</a>
+                                <a value="UTC-2">(UTC+2)大马士革</a>
+                                <a value="UTC-2">(UTC+2)哈拉雷,比勒陀利亚</a>
+                                <a value="UTC-2">(UTC+2)赫尔辛基,基辅,里加,索非亚,塔林,维尔纽斯</a>
+                                <a value="UTC-2">(UTC+2)开罗</a>
+                                <a value="UTC-2">(UTC+2)明斯克</a>
+                                <a value="UTC-2">(UTC+2)雅典,布加勒斯特</a>
+                                <a value="UTC-2">(UTC+2)耶路撒冷</a>
+                                <a value="UTC-2">(UTC+2)伊斯坦布尔</a>
+                                <a value="UTC-3">(UTC+3)巴格达</a>
+                                <a value="UTC-3">(UTC+3)加里宁格勒</a>
+                                <a value="UTC-3">(UTC+3)科威特,利雅得</a>
+                                <a value="UTC-3">(UTC+3)内罗毕</a>
+                                <a value="UTC-3:30">(UTC+3:30)德黑兰</a>
+                                <a value="UTC-4">(UTC+4)阿布扎比,马斯喀特</a>
+                                <a value="UTC-4">(UTC+4)埃里温</a>
+                                <a value="UTC-4">(UTC+4)巴库</a>
+                                <a value="UTC-4">(UTC+4)第比利斯</a>
+                                <a value="UTC-4">(UTC+4)路易港</a>
+                                <a value="UTC-4">(UTC+4)莫斯科,圣彼得堡,伏尔加格勒</a>
+                                <a value="UTC-4:30">(UTC+4:30)喀布尔</a>
+                                <a value="UTC-5">(UTC+5)塔什干</a>
+                                <a value="UTC-5">(UTC+5)伊斯兰堡,卡拉奇</a>
+                                <a value="UTC-5:30">(UTC+5:30)钦奈,加尔各答,孟买,新德里</a>
+                                <a value="UTC-5:30">(UTC+5:30)斯里加亚渥登普拉</a>
+                                <a value="UTC-5:45">(UTC+5:45)加德满都</a>
+                                <a value="UTC-6">(UTC+6)阿斯塔纳</a>
+                                <a value="UTC-6">(UTC+6)达卡</a>
+                                <a value="UTC-6">(UTC+6)叶卡捷琳堡</a>
+                                <a value="UTC-6:30">(UTC+6:30)仰光</a>
+                                <a value="UTC-7">(UTC+7)曼谷,河内,雅加达</a>
+                                <a value="UTC-7">(UTC+7)新西伯利亚</a>
+                                <a value="UTC-8" selected="selected">(UTC+8)北京,重庆,香港特别行政区,乌鲁木齐</a>
+                                <a value="UTC-8">(UTC+8)吉隆坡,新加坡</a>
+                                <a value="UTC-8">(UTC+8)克拉斯诺亚尔斯克</a>
+                                <a value="UTC-8">(UTC+8)珀斯</a>
+                                <a value="UTC-8">(UTC+8)台北</a>
+                                <a value="UTC-8">(UTC+8)乌兰巴托</a>
+                                <a value="UTC-8:30">(UTC+8:30)朝鲜标准时间</a>
+                                <a value="UTC-9">(UTC+9)大阪,札幌,东京</a>
+                                <a value="UTC-9">(UTC+9)首尔</a>
+                                <a value="UTC-9">(UTC+9)伊尔库茨克</a>
+                                <a value="UTC-9:30">(UTC+9:30)阿德莱德</a>
+                                <a value="UTC-9:30">(UTC+9:30)达尔文</a>
+                                <a value="UTC-10">(UTC+10)布里斯班</a>
+                                <a value="UTC-10">(UTC+10)关岛,莫尔兹比港</a>
+                                <a value="UTC-10">(UTC+10)霍巴特</a>
+                                <a value="UTC-10">(UTC+10)堪培拉,墨尔本,悉尼</a>
+                                <a value="UTC-10">(UTC+10)雅库茨克</a>
+                                <a value="UTC-10:30">(UTC+10:30)澳大利亚远东标准时间</a>
+                                <a value="UTC-11">(UTC+11)符拉迪沃斯托克</a>
+                                <a value="UTC-11">(UTC+11)所罗门群岛,新喀里多尼亚</a>
+                                <a value="UTC-11:30">(UTC+11:30)诺福克岛标准时间</a>
+                                <a value="UTC-12">(UTC+12)奥克兰,惠灵顿</a>
+                                <a value="UTC-12">(UTC+12)斐济</a>
+                                <a value="UTC-12">(UTC+12)马加丹</a>
+                                <a value="UTC-12">(UTC+12)协调世界时+12</a>
+                                <a value="UTC-12:45">(UTC+12:45)查塔姆群岛标准时间</a>
+                                <a value="UTC-13">(UTC+13)努库阿洛法</a>
+                                <a value="UTC-14">(UTC+14)基里巴斯</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" >
+            <div class="col-md-12 form-item form-input  ">
+                <span class="form-lable">NTP服务地址</span>
+                <input type="text" class="form-control form-item-input"  ng-model="ntp" value="www.baidu.com">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-8 form-item form-input ">
+                <span class="my-btn my-btn-primary" style="width: 280px;" ng-click="saveTimeZone()">确认</span>
+            </div>
+        </div>
+
+
+    </div>
+</div>

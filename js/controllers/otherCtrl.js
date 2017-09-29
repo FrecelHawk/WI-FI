@@ -8,6 +8,9 @@ define(['app','jquery'], function(app,$){
     return app.controller('otherCtrl', ['$scope','$rootScope','httpService',function ($scope,$rootScope,httpService) {
 
 
+
+
+
     }])
 
 });

@@ -1,0 +1,6 @@
+{ "fname": "system",
+  "opt": "firmstatus",
+  "function": "get",
+  "localfirm_version": "1.1.1",
+  "model": "YJ-LW004",
+  "error": 0 }
