@@ -78,8 +78,6 @@ require.config({
 
 require(['jquery', 'angular', 'angular-md5', 'jquery-ui','jquery-cookie', 'bootstrap','common', 'highcharts', 'exporting', 'angular-route', 'angular-sanitize', 'app', 'httpService', 'terminalCtrl', 'routerCtrl', 'internetCtrl', 'wifiSetCtrl', 'internetSetCtrl', 'securityCtrl', 'networkSetCtrl', 'systemStatusCtrl','qosCtrl','dhcpCtrl','ddnsCtrl','portRelayCtrl','vpnCtrl','otherCtrl', 'router'], function ($, angular) {
 
-
-
     $(function () {
         var domain = "http://127.0.0.1:8999/data/";
         var devices_set = [
@@ -227,11 +225,6 @@ require(['jquery', 'angular', 'angular-md5', 'jquery-ui','jquery-cookie', 'boots
             });
 
         }
-
-
-
-
-
 
 
 

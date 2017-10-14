@@ -67,57 +67,15 @@ define(['app','jquery'], function(app,$){
                     for(var i=0;i<list.length;i++)
                              appendOnlineList(list[i]);*/
 
-         /*      var boxList = response.mac_list.concat(ret.data);
+              var boxList = response.mac_list.concat(ret.data);
                var list = unique(boxList);
 
                for(var i=0;i<list.length;i++)
-                     appendOnlineList(list[i]);*/
+                     appendOnlineList(list[i]);
 
             });
 
         });
-
-        Array.prototype.each = function(fn){
-            fn = fn || Function.K;
-            var a = [];
-            var args = Array.prototype.slice.call(arguments, 1);
-            for(var i = 0; i < this.length; i++){
-                var res = fn.apply(this,[this[i],i].concat(args));
-                if(res != null) a.push(res);
-            }
-            return a;
-        };
-
-        /**
-         * 得到一个数组不重复的元素集合<br/>
-         * 唯一化一个数组
-         * @returns {Array} 由不重复元素构成的数组
-         */
-        Array.prototype.uniquelize = function(){
-            var ra = new Array();
-            for(var i = 0; i < this.length; i ++){
-                if(!ra.contains(this[i])){
-                    ra.push(this[i]);
-                }
-            }
-            return ra;
-        };
-
-        Array.intersect = function(a, b){
-            return a.uniquelize().each(function(o){return b.contains(o) ? o : null});
-        };
-
-        Array.minus = function(a, b){
-            return a.uniquelize().each(function(o){return b.contains(o) ? null : o});
-        };
-
-        Array.union = function(a, b){
-            return a.concat(b).uniquelize();
-        };
-
-        var a = [1,2,3,4];
-        var b = [3,4,5,6];
-        alert(Array.minus(a,b));
 
 
 

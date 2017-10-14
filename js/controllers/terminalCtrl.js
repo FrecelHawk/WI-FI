@@ -8,6 +8,9 @@ define(['app','jquery'], function(app,$){
     return app.controller('terminalCtrl', ['$scope','$rootScope','httpService',function ($scope,$rootScope,httpService) {
 
 
+        $(document).on('click','.sub-menu-block',function(){
+            alert('test');
+        });
 
 
         var device_list = "line_device_list";
